@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.album {
+  width: 400px;
+}
+
+.carousel {
+  overflow-x: auto;
+  white-space: nowrap;
+  display: flex;
+  height: 200px;
+}
+
+.carousel__header {
+  width: 100%;
+  text-align: center;
+}
+
+.carousel__navi {
+  width: 100%;
+  display: flex;
+}
+
+.carousel__navi__panel {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.carousel__navi__button {
+  cursor: pointer;
+  width: 10px;
+  height: 10px;
+  border: 3px solid;
+  border-color: gray transparent transparent gray;
+}
+
+.carousel__navi__button_left {
+  transform: rotate(-45deg);
+}
+
+.carousel__navi__button_right {
+  transform: rotate(135deg);
+}
+
+.carousel__item {
+  width: 140px;
+  padding: 0px 30px 30px 0px;
+}
+
+
+</style>
+
+<script>
+function init() {
+
+handleMouseEvent('.carousel__navi__button_left', true);
+handleMouseEvent('.carousel__navi__button_right', false);
+
+function scroll(toLeft) {
+  let el = document.querySelector('.carousel');
+  let width = el.offsetWidth;
+  let offset = 5;
+  if (!toLeft && el.scrollLeft < el.scrollWidth + offset) { 
+      el.scrollLeft +=offset;
+  } else if (toLeft && el.scrollLeft > 0) {
+    el.scrollLeft -= offset;
+  }
+}
+
+function handleMouseEvent(elementName, toLeft) {
+  document.querySelector(elementName).addEventListener('mouseenter', (e) => {
+    let interval = setInterval(() => scroll(toLeft), 50);
+    document.querySelector(elementName).addEventListener('mouseout', (e) => {
+      if (interval) {
+        clearInterval(interval);
+      }
+    });
+  });
+}
+
+}	
+</script>
+
+</head>
+<body onLoad='init()'> 
+
+<div class='album'>
+  <div class='carousel__header'>
+  <h3>Хиты 80-ых</h3>
+  </div>
+    <div class='carousel__navi'>
+      <div class='carousel__navi__panel'>
+        <div class='carousel__navi__button carousel__navi__button_left'></div>
+        <div class='carousel__navi__button carousel__navi__button_right'></div>
+      </div>
+    </div>
+    <div class="carousel" name='test'>
+      <div class='carousel__item'>
+        <img src='http://история-вещей.рф/wp-content/uploads/2014/08/vinilovye-plastinki-1.jpg' class='carousel__item'/>
+      </div>
+      <div class='carousel__item' name='3'>
+        <img src='http://история-вещей.рф/wp-content/uploads/2014/08/vinilovye-plastinki-1.jpg' class='carousel__item'/>
+      </div>
+      <div class='carousel__item'>
+        <img src='http://история-вещей.рф/wp-content/uploads/2014/08/vinilovye-plastinki-1.jpg' class='carousel__item'/>
+      </div>
+      <div class='carousel__item'>
+        <img src='http://история-вещей.рф/wp-content/uploads/2014/08/vinilovye-plastinki-1.jpg' class='carousel__item'/>
+      </div>
+      <div class='carousel__item'>
+        <img src='http://история-вещей.рф/wp-content/uploads/2014/08/vinilovye-plastinki-1.jpg' class='carousel__item'/>
+      </div>
+      <div class='carousel__item'>
+        <img src='http://история-вещей.рф/wp-content/uploads/2014/08/vinilovye-plastinki-1.jpg' class='carousel__item'/>
+      </div>
+      <div class='carousel__item'>
+        <img src='http://история-вещей.рф/wp-content/uploads/2014/08/vinilovye-plastinki-1.jpg' class='carousel__item'/>
+      </div>
+      <div class='carousel__item'>
+        <img src='http://история-вещей.рф/wp-content/uploads/2014/08/vinilovye-plastinki-1.jpg' class='carousel__item'/>
+      </div>
+      <div class='carousel__item'>
+        <img src='http://история-вещей.рф/wp-content/uploads/2014/08/vinilovye-plastinki-1.jpg' class='carousel__item'/>
+      </div>
+    </div>
+</div>
+
+</body>
+</html>
