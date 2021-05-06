@@ -19,18 +19,19 @@
   text-align: center;
 }
 
+/** navI через I, не 1 */
 .carousel__navi {
   width: 100%;
   display: flex;
 }
 
-.carousel__navi__panel {
+.carousel__panel {
   display: flex;
   margin-left: auto;
   margin-right: auto;
 }
 
-.carousel__navi__button {
+.carousel__button {
   cursor: pointer;
   width: 10px;
   height: 10px;
@@ -38,16 +39,16 @@
   border-color: gray transparent transparent gray;
 }
 
-.carousel__navi__button_left {
+.carousel__button_left {
   transform: rotate(-45deg);
 }
 
-.carousel__navi__button_right {
+.carousel__button_right {
   transform: rotate(135deg);
 }
 
 .carousel__item {
-  width: 140px;
+  width: 150px;
   padding: 0px 30px 30px 0px;
 }
 
@@ -57,24 +58,24 @@
 <script>
 function init() {
 
-handleMouseEvent('.carousel__navi__button_left', true);
-handleMouseEvent('.carousel__navi__button_right', false);
+handleMouseEnter('.carousel__button_left', true);
+handleMouseEnter('.carousel__button_right', false);
 
 function scroll(toLeft) {
-  let el = document.querySelector('.carousel');
-  let width = el.offsetWidth;
+  let carousel = document.querySelector('.carousel');
+  let width = carousel.offsetWidth;
   let offset = 5;
-  if (!toLeft && el.scrollLeft < el.scrollWidth + offset) { 
-      el.scrollLeft +=offset;
-  } else if (toLeft && el.scrollLeft > 0) {
-    el.scrollLeft -= offset;
+  if (!toLeft && carousel.scrollLeft < carousel.scrollWidth + offset) { 
+      carousel.scrollLeft +=offset;
+  } else if (toLeft && carousel.scrollLeft > 0) {
+    carousel.scrollLeft -= offset;
   }
 }
 
-function handleMouseEvent(elementName, toLeft) {
-  document.querySelector(elementName).addEventListener('mouseenter', (e) => {
+function handleMouseEnter(elementName, toLeft) {
+  document.querySelector(elementName).addEventListener('mouseenter', (event) => {
     let interval = setInterval(() => scroll(toLeft), 50);
-    document.querySelector(elementName).addEventListener('mouseout', (e) => {
+    document.querySelector(elementName).addEventListener('mouseout', (event) => {
       if (interval) {
         clearInterval(interval);
       }
@@ -93,39 +94,21 @@ function handleMouseEvent(elementName, toLeft) {
   <h3>Хиты 80-ых</h3>
   </div>
     <div class='carousel__navi'>
-      <div class='carousel__navi__panel'>
-        <div class='carousel__navi__button carousel__navi__button_left'></div>
-        <div class='carousel__navi__button carousel__navi__button_right'></div>
+      <div class='carousel__panel'>
+        <div class='carousel__button carousel__button_left'></div>
+        <div class='carousel__button carousel__button_right'></div>
       </div>
     </div>
     <div class="carousel" name='test'>
-      <div class='carousel__item'>
-        <img src='http://история-вещей.рф/wp-content/uploads/2014/08/vinilovye-plastinki-1.jpg' class='carousel__item'/>
-      </div>
-      <div class='carousel__item' name='3'>
-        <img src='http://история-вещей.рф/wp-content/uploads/2014/08/vinilovye-plastinki-1.jpg' class='carousel__item'/>
-      </div>
-      <div class='carousel__item'>
-        <img src='http://история-вещей.рф/wp-content/uploads/2014/08/vinilovye-plastinki-1.jpg' class='carousel__item'/>
-      </div>
-      <div class='carousel__item'>
-        <img src='http://история-вещей.рф/wp-content/uploads/2014/08/vinilovye-plastinki-1.jpg' class='carousel__item'/>
-      </div>
-      <div class='carousel__item'>
-        <img src='http://история-вещей.рф/wp-content/uploads/2014/08/vinilovye-plastinki-1.jpg' class='carousel__item'/>
-      </div>
-      <div class='carousel__item'>
-        <img src='http://история-вещей.рф/wp-content/uploads/2014/08/vinilovye-plastinki-1.jpg' class='carousel__item'/>
-      </div>
-      <div class='carousel__item'>
-        <img src='http://история-вещей.рф/wp-content/uploads/2014/08/vinilovye-plastinki-1.jpg' class='carousel__item'/>
-      </div>
-      <div class='carousel__item'>
-        <img src='http://история-вещей.рф/wp-content/uploads/2014/08/vinilovye-plastinki-1.jpg' class='carousel__item'/>
-      </div>
-      <div class='carousel__item'>
-        <img src='http://история-вещей.рф/wp-content/uploads/2014/08/vinilovye-plastinki-1.jpg' class='carousel__item'/>
-      </div>
+      <img src='http://история-вещей.рф/wp-content/uploads/2014/08/vinilovye-plastinki-1.jpg' class='carousel__item'/>
+      <img src='http://история-вещей.рф/wp-content/uploads/2014/08/vinilovye-plastinki-1.jpg' class='carousel__item'/>
+      <img src='http://история-вещей.рф/wp-content/uploads/2014/08/vinilovye-plastinki-1.jpg' class='carousel__item'/>
+      <img src='http://история-вещей.рф/wp-content/uploads/2014/08/vinilovye-plastinki-1.jpg' class='carousel__item'/>
+      <img src='http://история-вещей.рф/wp-content/uploads/2014/08/vinilovye-plastinki-1.jpg' class='carousel__item'/>
+      <img src='http://история-вещей.рф/wp-content/uploads/2014/08/vinilovye-plastinki-1.jpg' class='carousel__item'/>
+      <img src='http://история-вещей.рф/wp-content/uploads/2014/08/vinilovye-plastinki-1.jpg' class='carousel__item'/>
+      <img src='http://история-вещей.рф/wp-content/uploads/2014/08/vinilovye-plastinki-1.jpg' class='carousel__item'/>
+      <img src='http://история-вещей.рф/wp-content/uploads/2014/08/vinilovye-plastinki-1.jpg' class='carousel__item'/>
     </div>
 </div>
 
