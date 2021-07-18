@@ -1,0 +1,7 @@
+.paggiation-grid{
+    display: inline-flex;
+}
+
+.paggiation-grid-button .paggiation-grid-button{
+    padding:5px
+}
