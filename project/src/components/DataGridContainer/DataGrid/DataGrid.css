@@ -1,0 +1,12 @@
+.data-grid{
+    display: inline-flex;
+}
+
+.dataGridRow {
+    width: 110px;  
+    border: 1px solid #ece3e3;  
+}
+
+.selected {
+    background-color: grey;
+}

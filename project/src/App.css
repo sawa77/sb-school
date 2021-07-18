@@ -1,0 +1,36 @@
+.themeLight {
+  --background-color: #FFFFFF;
+  --main-color: #459DF5;
+  --attention-color: #F53152;
+  --completed-status-color: #0FB864;
+  --delayed-status-text-color: black;
+  --delayed-status-ico-color: #FF8C56;
+  --new-status-color: #0FB864;
+  --canceled-status-color: gray;
+  --colored-button-text-color: #FFFFFF;
+  --button-text-color: #459DF5;
+  --border-color: #459DF5;
+  --extended-filter-background-color: #EBF0F5;
+  --row-border-color: #EBF0F5;
+  --cell-text-color: black;
+  --cell-header-text-color: #EBF0F5;
+  --input-background-color: #FFFFFF;
+  --checkbox-color-filter: none;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-family: Ubuntu, serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 32px;
+  letter-spacing: -0.2px;
+  color: var(--cell-text-color);
+}
