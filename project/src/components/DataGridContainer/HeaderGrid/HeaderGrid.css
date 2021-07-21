@@ -1,0 +1,28 @@
+.header-grid {
+    display: inline-flex;
+
+    height: 40px;
+    background: var(--main-color)
+}
+
+.grid-cell {
+    flex: 5;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 200px;
+    padding: 12px 8px;
+    color: var(--cell-text-color);
+}
+
+.grid-cell__header {
+    width: 110px;
+    color: var(--cell-header-text-color);;
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 16px;
+    border: 1px solid #ece3e3;
+    background-color: lightblue
+}
